@@ -6,7 +6,6 @@ Code repo for the paper "DAVANet: Stereo Deblurring with View Aggregation" (CVPR
   <img width=95% src="https://user-images.githubusercontent.com/14334509/57180102-f9c4b700-6eb7-11e9-927b-42a81ad39d7d.png">
 </p>
 
-
 ## Stereo Blur Dataset
 <p align="center">
   <img width=100% src="https://user-images.githubusercontent.com/14334509/57179915-e9abd800-6eb5-11e9-86db-2c696fa69bad.png">
