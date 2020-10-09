@@ -27,6 +27,7 @@ def predict_occ(in_channels):
     return nn.Conv2d(in_channels,1,kernel_size=3,stride=1,padding=1,bias=True)
 
 def predict_occ_bi(in_channels):
+    # 预测双向视差，输出通道数为2
     return nn.Conv2d(in_channels,2,kernel_size=3,stride=1,padding=1,bias=True)
 
 def upconv(in_channels, out_channels):

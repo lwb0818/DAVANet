@@ -73,6 +73,7 @@ class DispNet_Bi(nn.Module):
         disp3 = self.disp3(upconv3_i) + disp4
 
         updisp3 = self.updisp3(disp3)
+        # disp-bi-3上采样
         upconv2 = self.upconv2(upconv3_i)
         cat2 = torch.cat([conv2, upconv2, updisp3], 1)
         upconv2_i = self.upconv2_f(self.upconv2_i(cat2))
@@ -89,11 +90,6 @@ class DispNet_Bi(nn.Module):
         cat0 = torch.cat([upconv0, updisp1], 1)
         upconv0_i = self.upconv0_f(self.upconv0_i(cat0))
         disp0 = self.disp0(upconv0_i) + updisp1
-
-        # if self.training:
-        #     return disp0, disp1, disp2, disp3, disp4
-        # else:
-        #     return disp0
 
         if self.training:
             return disp0, disp1, disp2, disp3, disp4, upconv0_i

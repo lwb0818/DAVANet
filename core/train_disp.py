@@ -82,7 +82,6 @@ def train_dispnet(cfg, init_epoch, train_data_loader, val_data_loader, dispnet, 
             disp_losses.update(disp_loss.item(), cfg.CONST.TRAIN_BATCH_SIZE)
             disp_EPEs.update(disp_EPE.item(), cfg.CONST.TRAIN_BATCH_SIZE)
 
-
             # Append loss to TensorBoard
             n_itr = epoch_idx * n_batches + batch_idx
             train_writer.add_scalar('DispNet/BatchLoss_0_TRAIN', disp_loss.item(), n_itr)

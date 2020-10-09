@@ -82,6 +82,7 @@ class StereoDeblurNet(nn.Module):
         warp_img_right = disp_warp(img_left, disp_right*cfg.DATA.DIV_DISP, cuda=True)
         diff_left = torch.sum(torch.abs(img_left - warp_img_left), 1).view(b,1,*warp_img_left.shape[-2:])
         diff_right = torch.sum(torch.abs(img_right - warp_img_right), 1).view(b,1,*warp_img_right.shape[-2:])
+        # 自适应平均池化，四倍降采样
         diff_2_left = nn.functional.adaptive_avg_pool2d(diff_left, (h, w))
         diff_2_right = nn.functional.adaptive_avg_pool2d(diff_right, (h, w))
 

@@ -52,5 +52,6 @@ def main():
     # Setup Network & Start train/test process
     bulid_net(cfg)
 
+
 if __name__ == '__main__':
     main()
