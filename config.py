@@ -15,7 +15,8 @@ cfg     = __C
 __C.CONST                               = edict()
 __C.CONST.DEVICE                        = 'all'                   # '0'
 __C.CONST.NUM_WORKER                    = 1                       # number of data workers
-__C.CONST.WEIGHTS                       = '/data/code/StereodeblurNet-release/ckpt/best-ckpt.pth.tar'
+# __C.CONST.WEIGHTS                       = '/data/code/StereodeblurNet-release/ckpt/best-ckpt.pth.tar'
+__C.CONST.WEIGHTS                       = './ckpt/best-ckpt.pth.tar'
 __C.CONST.TRAIN_BATCH_SIZE              = 1
 __C.CONST.TEST_BATCH_SIZE               = 1
 
@@ -36,7 +37,7 @@ else:
 # Directories
 #
 __C.DIR                                 = edict()
-__C.DIR.OUT_PATH = '/data/code/StereodeblurNet/output'
+__C.DIR.OUT_PATH = './output'
 
 # For FlyingThings3D Dataset
 if cfg.DATASET.DATASET_NAME == 'FlyingThings3D':
@@ -50,7 +51,8 @@ if cfg.DATASET.DATASET_NAME == 'FlyingThings3D':
 # For Stereo_Blur_Dataset
 elif cfg.DATASET.DATASET_NAME == 'StereoDeblur':
       __C.DIR.DATASET_JSON_FILE_PATH        = './datasets/stereo_deblur_data.json'
-      __C.DIR.DATASET_ROOT                  = '/data1/stereo_deblur_data_final_gamma/'
+      # __C.DIR.DATASET_ROOT                  = '/data1/stereo_deblur_data_final_gamma/'
+      __C.DIR.DATASET_ROOT                  = '../Dataset/test'
       __C.DIR.IMAGE_LEFT_BLUR_PATH          = __C.DIR.DATASET_ROOT + '%s/image_left_blur_ga/%s.png'
       __C.DIR.IMAGE_LEFT_CLEAR_PATH         = __C.DIR.DATASET_ROOT + '%s/image_left/%s.png'
       __C.DIR.IMAGE_RIGHT_BLUR_PATH         = __C.DIR.DATASET_ROOT + '%s/image_right_blur_ga/%s.png'
@@ -77,7 +79,8 @@ __C.NETWORK.DISPNETARCH                 = 'DispNet_Bi'            # available op
 __C.NETWORK.DEBLURNETARCH               = 'StereoDeblurNet'       # available options: DeblurNet, StereoDeblurNet
 __C.NETWORK.LEAKY_VALUE                 = 0.1
 __C.NETWORK.BATCHNORM                   = False
-__C.NETWORK.PHASE                       = 'train'                 # available options: 'train', 'test', 'resume'
+# __C.NETWORK.PHASE                       = 'train'                 # available options: 'train', 'test', 'resume'
+__C.NETWORK.PHASE                       = 'test'                 # available options: 'train', 'test', 'resume'
 __C.NETWORK.MODULE                      = 'all'                   # available options: 'dispnet', 'deblurnet', 'all'
 #
 # Training

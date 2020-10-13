@@ -64,7 +64,6 @@ def bulid_net(cfg):
     dispnet = models.__dict__[cfg.NETWORK.DISPNETARCH].__dict__[cfg.NETWORK.DISPNETARCH]()
     deblurnet = models.__dict__[cfg.NETWORK.DEBLURNETARCH].__dict__[cfg.NETWORK.DEBLURNETARCH]()
 
-
     print('[DEBUG] %s Parameters in %s: %d.' % (dt.now(), cfg.NETWORK.DISPNETARCH,
                                                 utils.network_utils.count_parameters(dispnet)))
 
